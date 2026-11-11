@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UUD RIS (1949–1950) — Eksperimen Demokrasi Federal Indonesia</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Syne, Instrument Serif, JetBrains Mono, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#121110',
+            obsidianCard: '#1B1917',
+            goldPrimary: '#D4AF37',
+            goldChampagne: '#F3E5AB',
+            goldAntique: '#9A7B2C',
+            ivoryWhite: '#FAF8F5',
+            silverPaper: '#ECEEF2',
+            silverMetal: '#C0C5CE',
+            silverMuted: '#7D8490',
+            archiveInk: '#161514'
+          },
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            serifItalic: ['Instrument Serif', 'serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       SCROLL PROGRESS BAR
+  ══════════════════════════════════════════════ -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR — fixed, always on top
+  ══════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <a class="navbar__logo" href="#">
+      <span class="navbar__logo-first">LANDO</span>
+      <span class="navbar__logo-last">NORRIS</span>
+    </a>
+    <div class="navbar__right">
+      <a class="navbar__store" href="#">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        STORE
+      </a>
+      <button class="navbar__menu" aria-label="Open menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       SCROLL WRAPPER
+  ══════════════════════════════════════════════ -->
+  <div class="scroll-wrapper">
+
+    <!-- ══════════════════════════════════════════
+         SHRINK ZONE (tall = scroll room)
+         Contains a sticky viewport that holds:
+           • dark-backdrop  (always visible)
+           • hero-card      (scales from full → small)
+    ════════════════════════════════════════════ -->
+    <div class="shrink-zone" id="shrinkZone">
+
+      <!-- sticky viewport: fills 100vh, sticks to top -->
+      <div class="sticky-viewport">
+
+        <!-- 1. Elegant Black background layer (behind the card) -->
+        <div class="dark-backdrop">
+
+          <!-- decorative subtle gold contour rings like in the reference -->
+          <div class="bg-contours" aria-hidden="true">
+            <svg viewBox="0 0 1200 700" fill="none" preserveAspectRatio="xMidYMid slice">
+              <ellipse cx="600" cy="350" rx="360" ry="240" stroke="rgba(212,175,55,0.22)" stroke-width="1.2" stroke-dasharray="4 6" fill="none"/>
+              <ellipse cx="600" cy="350" rx="460" ry="320" stroke="rgba(212,175,55,0.18)" stroke-width="1" fill="none"/>
+              <ellipse cx="600" cy="350" rx="580" ry="410" stroke="rgba(212,175,55,0.14)" stroke-width="0.9" fill="none"/>
+              <ellipse cx="600" cy="350" rx="700" ry="490" stroke="rgba(212,175,55,0.10)" stroke-width="0.8" fill="none"/>
+              <ellipse cx="200" cy="560" rx="300" ry="200" stroke="rgba(212,175,55,0.15)" stroke-width="0.8" fill="none"/>
+              <ellipse cx="1020" cy="160" rx="280" ry="190" stroke="rgba(212,175,55,0.15)" stroke-width="0.8" fill="none"/>
+              <ellipse cx="850" cy="580" rx="220" ry="150" stroke="rgba(212,175,55,0.12)" stroke-width="0.8" stroke-dasharray="6 8" fill="none"/>
+            </svg>
+          </div>
+
+          <!-- Infinite Continuous Auto Marquee Text behind the photo card -->
+          <div class="behind-text-container" id="behindTextContainer" aria-hidden="true">
+            <!-- TOP ROW: Automatically moves to the RIGHT continuously (Gold Serif) -->
+            <div class="behind-text-row behind-text-row--top">
+              <div class="marquee-auto marquee-auto--right">
+                <div class="marquee-group">
+                  <span>KONFERENSI MEJA BUNDAR</span>
+                  <span class="gold-symbol">✦</span>
+                  <span>KONFERENSI MEJA BUNDAR</span>
+                  <span class="gold-symbol">✦</span>
+                  <span>KONFERENSI MEJA BUNDAR</span>
+                  <span class="gold-symbol">✦</span>
+                </div>
+                <div class="marquee-group" aria-hidden="true">
+                  <span>KONFERENSI MEJA BUNDAR</span>
+                  <span class="gold-symbol">✦</span>
+                  <span>KONFERENSI MEJA BUNDAR</span>
+                  <span class="gold-symbol">✦</span>
+                  <span>KONFERENSI MEJA BUNDAR</span>
+                  <span class="gold-symbol">✦</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOTTOM ROW: Automatically moves to the LEFT continuously (Bold White Extended Sans) -->
+            <div class="behind-text-row behind-text-row--bottom">
+              <div class="marquee-auto marquee-auto--left">
+                <div class="marquee-group">
+                  <span>KEMERDEKAAN ▪ 27 DESEMBER 1949</span>
+                  <span class="white-symbol">▪</span>
+                  <span>KEMERDEKAAN ▪ 27 DESEMBER 1949</span>
+                  <span class="white-symbol">▪</span>
+                  <span>KEMERDEKAAN ▪ 27 DESEMBER 1949</span>
+                  <span class="white-symbol">▪</span>
+                </div>
+                <div class="marquee-group" aria-hidden="true">
+                  <span>KEMERDEKAAN ▪ 27 DESEMBER 1949</span>
+                  <span class="white-symbol">▪</span>
+                  <span>KEMERDEKAAN ▪ 27 DESEMBER 1949</span>
+                  <span class="white-symbol">▪</span>
+                  <span>KEMERDEKAAN ▪ 27 DESEMBER 1949</span>
+                  <span class="white-symbol">▪</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section header above card (reveals on shrink) -->
+          <div class="section-header" id="sectionHeader">
+            <div class="section-header__logo">UUD RIS</div>
+            <div class="section-header__label">ARSIP SEJARAH INDONESIA</div>
+          </div>
+
+        </div><!-- /.dark-backdrop -->
+
+        <!-- 2. Hero card — this is what GSAP animates -->
+        <div class="hero-card" id="heroCard">
+
+          <!-- 1. Background Photo from assets/img -->
+          <div class="hero-card__photo-wrap">
+            <img src="assets/img/11274493.jpg" alt="Historical Archival Photo" class="hero-card__photo" />
+            <div class="hero-card__photo-overlay"></div>
+          </div>
+
+          <!-- Light background contours subtle overlay -->
+          <div class="hero-card__bg">
+            <div class="card-contours" aria-hidden="true">
+              <svg viewBox="0 0 1200 700" fill="none" preserveAspectRatio="xMidYMid slice">
+                <ellipse cx="600" cy="350" rx="420" ry="260" stroke="rgba(255,255,255,0.15)" stroke-width="1.2" fill="none"/>
+                <ellipse cx="600" cy="350" rx="510" ry="340" stroke="rgba(255,255,255,0.12)" stroke-width="1"   fill="none"/>
+                <ellipse cx="600" cy="350" rx="600" ry="420" stroke="rgba(255,255,255,0.08)" stroke-width="0.8" fill="none"/>
+                <ellipse cx="600" cy="350" rx="690" ry="490" stroke="rgba(255,255,255,0.05)" stroke-width="0.6" fill="none"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Card Header Monogram -->
+          <div class="card-header-badge" aria-hidden="true">
+            <div class="portrait__monogram">LN</div>
+          </div>
+
+          <!-- Next Race info (bottom-left of card) -->
+          <div class="card-badge">
+            <div class="card-badge__label">ARCHIVE REGISTRY</div>
+            <svg class="card-badge__circuit" width="48" height="32" viewBox="0 0 48 32" fill="none">
+              <path d="M4 24 Q4 10 16 10 Q26 10 26 17 Q26 24 36 24 Q44 24 44 17" stroke="#ffffff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            </svg>
+            <div class="card-badge__gp">HISTORICAL ERA</div>
+            <div class="card-badge__divider"></div>
+            <div class="card-badge__team">REPUBLIC ARCHIVE<br>1945 - 1949</div>
+          </div>
+
+          <!-- Golden Signature "UUDRIS" (appears when shrunk) -->
+          <div class="hero-card__signature" id="heroSignature" aria-label="UUDRIS Golden Signature">
+            <img src="assets/img/UUDRIS_gold.png" alt="UUDRIS Golden Signature" class="hero-card__signature-img" />
+          </div>
+
+        </div><!-- /.hero-card -->
+
+      </div><!-- /.sticky-viewport -->
+    </div><!-- /.shrink-zone -->
+
+    <!-- ══════════════════════════════════════════
+         CONTENT SECTION 2: Repository of Remnants
+         (Initially Black, smoothly transforms to White when scrolling into Section 3)
+    ════════════════════════════════════════════ -->
+    <section class="content-section" id="content">
+
+      <div class="bg-contours content-contours" aria-hidden="true">
+        <svg viewBox="0 0 1200 700" fill="none" preserveAspectRatio="xMidYMid slice">
+          <ellipse cx="600" cy="350" rx="380" ry="240" stroke="rgba(212,175,55,0.18)" stroke-width="1.2" fill="none"/>
+          <ellipse cx="600" cy="350" rx="490" ry="330" stroke="rgba(212,175,55,0.14)" stroke-width="1" fill="none"/>
+          <ellipse cx="600" cy="350" rx="590" ry="410" stroke="rgba(212,175,55,0.1)" stroke-width="0.8" fill="none"/>
+          <ellipse cx="140" cy="500" rx="310" ry="210" stroke="rgba(212,175,55,0.12)" stroke-width="0.8" fill="none"/>
+          <ellipse cx="1060" cy="200" rx="270" ry="190" stroke="rgba(212,175,55,0.12)" stroke-width="0.8" fill="none"/>
+        </svg>
+      </div>
+
+      <!-- Running ticker strip -->
+      <div class="ticker-wrap">
+        <div class="ticker-track" aria-hidden="true">
+          <span>KONFERENSI MEJA BUNDAR</span>
+          <span class="ticker-dot">✦</span>
+          <span>KEMERDEKAAN ▪ 27 DESEMBER 1949</span>
+          <span class="ticker-dot">✦</span>
+          <span>UUD RIS ▪ REPUBLIK INDONESIA SERIKAT</span>
+          <span class="ticker-dot">✦</span>
+          <span>ARSIP NASIONAL SEJARAH BANGSA</span>
+          <span class="ticker-dot">✦</span>
+          <!-- duplicate for seamless loop -->
+          <span>KONFERENSI MEJA BUNDAR</span>
+          <span class="ticker-dot">✦</span>
+          <span>KEMERDEKAAN ▪ 27 DESEMBER 1949</span>
+          <span class="ticker-dot">✦</span>
+          <span>UUD RIS ▪ REPUBLIK INDONESIA SERIKAT</span>
+          <span class="ticker-dot">✦</span>
+          <span>ARSIP NASIONAL SEJARAH BANGSA</span>
+          <span class="ticker-dot">✦</span>
+        </div>
+      </div>
+
+      <!-- Main content grid (Repository of Remnants) -->
+      <div class="content-inner">
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb fade-text-sm">Source / Drawer / Registry / Residue 1949</div>
+
+        <!-- Page heading with High Line Reveal (Block Highlighter Wipe #D4AF37) -->
+        <h1 class="page-heading">
+          <span class="highline-reveal">
+            <span class="highline-text">Repository of</span>
+            <span class="highline-block"></span>
+          </span>
+          <br>
+          <span class="highline-reveal">
+            <span class="highline-text">Remnants</span>
+            <span class="highline-block"></span>
+          </span>
+        </h1>
+
+        <!-- Two-column body text (Fade from 0% to 100% opacity) -->
+        <div class="body-columns">
+          <p class="body-col fade-text-sm">
+            This section presents a compiled set of archival records organised according to the current indexing scheme. Each item listed within this repository is referenced by abstract identifiers and catalogued without revealing explicit content or purpose. Access to detailed information is restricted.
+          </p>
+          <p class="body-col fade-text-sm">
+            The listed documents represent fragments originating from various, non-disclosed sources and have been grouped based on their metadata structure and hierarchical relationships. Status labels indicate the integrity of each record, with entries marked as active, pending validation, or archived for reference only.
+          </p>
+        </div>
+
+        <!-- Meta badge (Fade from 0% to 100% opacity) -->
+        <div class="meta-row fade-text-sm">
+          <div class="meta-badge">
+            <span class="meta-badge__label">Archive Assemblage</span>
+            <span class="meta-badge__date">Nov 10, 2026</span>
+          </div>
+          <div class="meta-actions">
+            <button class="meta-action" aria-label="Grid view">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                <rect x="1" y="1" width="6" height="6" rx="1"/>
+                <rect x="9" y="1" width="6" height="6" rx="1"/>
+                <rect x="1" y="9" width="6" height="6" rx="1"/>
+                <rect x="9" y="9" width="6" height="6" rx="1"/>
+              </svg>
+            </button>
+            <button class="meta-action" aria-label="List view">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                <rect x="1" y="2" width="14" height="2" rx="1"/>
+                <rect x="1" y="7" width="14" height="2" rx="1"/>
+                <rect x="1" y="12" width="14" height="2" rx="1"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Large display text with High Line Reveal (Block Highlighter Wipe #D4AF37) -->
+        <div class="display-marquee" aria-hidden="true">
+          <div class="display-marquee__row dm-row-1">
+            <span class="highline-reveal highline-reveal--large">
+              <span class="highline-text">AT HOME WE DI</span>
+              <span class="highline-block"></span>
+            </span>
+          </div>
+          <div class="display-marquee__row dm-row-2">
+            <span class="highline-reveal highline-reveal--large">
+              <span class="highline-text">BER FOREVER</span>
+              <span class="highline-block"></span>
+            </span>
+          </div>
+        </div>
+
+        <!-- CTA row (Fade from 0% to 100% opacity) -->
+        <div class="cta-row fade-text-sm">
+          <a class="cta-primary" href="#">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 01-8 0"/>
+            </svg>
+            STORE
+          </a>
+          <a class="cta-secondary" href="#">McLAREN F1 SINCE 2019 →</a>
+        </div>
+
+      </div><!-- /.content-inner -->
+    </section>
+
+    <!-- ==========================================
+         SECTION 3: BEDAH 5 KOMPONEN DEMOKRASI ERA UUD RIS
+         (Section Tarik Garis — Scrubbed Color Interpolation ke #FAF8F5)
+         ========================================== -->
+    <section id="indikator-section" class="relative pt-24 sm:pt-32 pb-28 sm:pb-40 overflow-hidden">
+        
+        <!-- Continuous Winding SVG Line Background (Draws itself on scroll in Antique Gold) -->
+        <svg id="winding-svg-container" class="hidden md:block absolute top-0 left-0 w-full h-full pointer-events-none z-0" viewBox="0 0 1200 3600" fill="none" preserveAspectRatio="none">
+            <!-- Faint Silver Guide Track -->
+            <path d="M 600 0 C 950 300, 200 650, 780 1050 C 1150 1350, 150 1750, 650 2150 C 1050 2500, 250 2950, 600 3550" 
+                  stroke="#C0C5CE" stroke-opacity="0.45" stroke-width="2" stroke-dasharray="8 8"/>
+            <!-- Animated Gold Drawn Path on Scroll -->
+            <path id="scroll-drawn-path" 
+                  d="M 600 0 C 950 300, 200 650, 780 1050 C 1150 1350, 150 1750, 650 2150 C 1050 2500, 250 2950, 600 3550" 
+                  stroke="#D4AF37" stroke-width="4.5" stroke-linecap="round" filter="drop-shadow(0 0 10px rgba(212,175,55,0.6))"/>
+        </svg>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="max-w-3xl mb-20">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-obsidian text-goldPrimary font-mono text-xs mb-4 shadow border border-goldPrimary/30">
+                    <span>ANALISIS UTAMA</span>
+                    <span>•</span>
+                    <span>5 INDIKATOR NEGARA DEMOKRASI</span>
+                </div>
+                <h2 class="font-display font-extrabold text-4xl sm:text-6xl tracking-tight leading-none text-current">
+                    BEDAH 5 KOMPONEN DEMOKRASI <span class="font-serifItalic italic font-normal underline decoration-goldPrimary decoration-4">ERA UUD RIS</span>
+                </h2>
+                <p class="mt-4 text-base sm:text-lg opacity-80 leading-relaxed text-current">
+                    Sesuai instrumen analisis periode konstitusi, berikut adalah evaluasi pelaksanaan demokrasi di Indonesia selama berlakunya UUD RIS (27 Desember 1949 – 17 Agustus 1950).
+                </p>
+                <div class="mt-6">
+                    <button onclick="openCompareModal()" class="bg-goldPrimary hover:bg-goldChampagne text-obsidian font-mono font-bold text-xs px-5 py-2.5 rounded-xl inline-flex items-center gap-2 shadow-[0_0_24px_rgba(212,175,55,0.35)] transition transform hover:-translate-y-0.5 active:scale-95">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                        <span>BUKA MATRIKS 5 INDIKATOR</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- CARD 01: AKUNTABILITAS -->
+            <article id="indikator-1" class="indicator-card grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-28 lg:mb-36">
+                <div class="lg:col-span-7">
+                    <div class="silver-sheen-card border-2 border-silverMetal/60 rounded-3xl p-5 sm:p-7 shadow-xl relative overflow-hidden text-archiveInk transition-all duration-500">
+                        <div class="flex items-center justify-between font-mono text-xs text-silverMuted mb-4">
+                            <span>INDIKATOR_01 // PERTANGGUNGJAWABAN PEMERINTAH</span>
+                            <span class="px-2.5 py-0.5 rounded bg-obsidian text-goldPrimary font-bold">PASAL 118 UUD RIS</span>
+                        </div>
+
+                        <div class="archival-visual rounded-2xl bg-obsidian p-6 sm:p-8 text-ivoryWhite relative overflow-hidden border border-goldPrimary/30">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
+                                <div>
+                                    <span class="font-mono text-[11px] text-goldPrimary tracking-widest uppercase">Arsip Parlemen 1950</span>
+                                    <h4 class="font-display font-bold text-2xl mt-1 text-white">Kabinet Hatta & Parlemen Dua Kamar</h4>
+                                    <p class="text-xs text-silverMetal mt-2 leading-relaxed">
+                                        Menteri bertanggung jawab penuh kepada DPR RIS atas kebijaksanaan pemerintah, namun dilindungi "perisai" Pasal 118.
+                                    </p>
+                                    <div class="mt-4 inline-flex items-center gap-2 bg-goldPrimary/15 border border-goldPrimary/40 px-3 py-1.5 rounded-lg font-mono text-xs text-goldChampagne">
+                                        <span>🛡️ Parlemen Tidak Bisa Menjatuhkan Kabinet</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-center">
+                                    <svg class="w-48 h-48" viewBox="0 0 200 200" fill="none">
+                                        <circle cx="100" cy="100" r="85" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="6 6"/>
+                                        <rect x="45" y="35" width="110" height="42" rx="8" fill="#1B1917" stroke="#D4AF37" stroke-width="2"/>
+                                        <text x="100" y="55" text-anchor="middle" fill="#D4AF37" font-family="JetBrains Mono" font-size="10" font-weight="bold">KABINET RIS (HATTA)</text>
+                                        <text x="100" y="68" text-anchor="middle" fill="#FAF8F5" font-family="Plus Jakarta Sans" font-size="8">Eksekutif Penyelenggara</text>
+                                        <path d="M100 84 L125 94 V112 C125 126 100 135 100 135 C100 135 75 126 75 112 V94 L100 84 Z" fill="#D4AF37" fill-opacity="0.2" stroke="#D4AF37" stroke-width="2"/>
+                                        <text x="100" y="113" text-anchor="middle" fill="#F3E5AB" font-family="JetBrains Mono" font-size="8" font-weight="bold">PASAL 118</text>
+                                        <rect x="30" y="142" width="65" height="36" rx="6" fill="#121110" stroke="#C0C5CE" stroke-width="1.5"/>
+                                        <text x="62" y="163" text-anchor="middle" fill="#FAF8F5" font-family="JetBrains Mono" font-size="9">DPR RIS</text>
+                                        <rect x="105" y="142" width="65" height="36" rx="6" fill="#121110" stroke="#C0C5CE" stroke-width="1.5"/>
+                                        <text x="137" y="163" text-anchor="middle" fill="#FAF8F5" font-family="JetBrains Mono" font-size="9">SENAT</text>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-archiveInk/10">
+                            <div class="flex items-center gap-2">
+                                <span class="font-mono text-xs font-bold uppercase">TINGKAT AKUNTABILITAS:</span>
+                                <span class="px-3 py-1 rounded-full bg-obsidian text-goldPrimary font-mono text-xs font-bold">TINGGI & TRANSPARAN</span>
+                            </div>
+                            <button onclick="toggleDetail('detail-1')" class="font-mono text-xs font-bold underline hover:text-goldAntique transition">
+                                + Bedah Bukti Konstitusi
+                            </button>
+                        </div>
+
+                        <div id="detail-1" class="hidden mt-4 pt-4 border-t border-archiveInk/15 text-sm space-y-2 bg-white/80 p-4 rounded-2xl">
+                            <p><strong>• Pasal 118 Ayat (1) UUD RIS:</strong> <em>"Presiden tidak dapat diganggu-gugat."</em> (Kepala negara simbolis).</p>
+                            <p><strong>• Pasal 118 Ayat (2) UUD RIS:</strong> <em>"Menteri-menteri bertanggung-jawab atas seluruh kebijaksanaan Pemerintah..."</em></p>
+                            <p><strong>• Sistem Quasi-Parlementer:</strong> DPR RIS mengawasi secara kritis namun tidak dapat menjatuhkan kabinet melalui mosi tidak percaya.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 space-y-5">
+                    <div class="inline-block font-mono text-xs px-3 py-1 rounded border border-current opacity-70">
+                        01 / 05 — AKUNTABILITAS
+                    </div>
+                    <h3 class="font-display font-extrabold text-3xl sm:text-4xl leading-tight text-current">
+                        Parlementer Semu (<span class="font-serifItalic italic font-normal text-4xl sm:text-5xl text-goldAntique">Quasi-Parlementer</span>) dengan Pengawasan Terbuka.
+                    </h3>
+                    <blockquote class="font-serifItalic text-2xl sm:text-3xl leading-snug opacity-90 border-l-4 border-goldPrimary pl-5 py-1">
+                        "Perdana Menteri Moh. Hatta dan kabinetnya menjawab setiap interpelasi DPR RIS secara terbuka, sementara konstitusi menjaga stabilitas eksekutif."
+                    </blockquote>
+                    <p class="text-sm sm:text-base opacity-80 leading-relaxed text-current">
+                        Akuntabilitas pemerintahan berjalan sangat transparan. Perdebatan di DPR RIS dan Senat diliput secara bebas oleh pers nasional tanpa sensor, memastikan setiap kebijakan kabinet dipertanggungjawabkan di hadapan wakil rakyat dan daerah.
+                    </p>
+                </div>
+            </article>
+
+            <!-- CARD 02: ROTASI KEKUASAAN -->
+            <article id="indikator-2" class="indicator-card grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-28 lg:mb-36">
+                <div class="lg:col-span-5 order-2 lg:order-1 space-y-5">
+                    <div class="inline-block font-mono text-xs px-3 py-1 rounded border border-current opacity-70">
+                        02 / 05 — ROTASI KEKUASAAN
+                    </div>
+                    <h3 class="font-display font-extrabold text-3xl sm:text-4xl leading-tight text-current">
+                        Statis di Pemerintahan Pusat, <span class="font-serifItalic italic font-normal text-4xl sm:text-5xl text-goldAntique">Revolusioner di Daerah</span>.
+                    </h3>
+                    <blockquote class="font-serifItalic text-2xl sm:text-3xl leading-snug opacity-90 border-l-4 border-obsidian pl-5 py-1">
+                        "Hanya ada satu kabinet seumur hidup UUD RIS di Jakarta, namun di daerah terjadi gelombang pengunduran diri para Wali Negara Bagian."
+                    </blockquote>
+                    <p class="text-sm sm:text-base opacity-80 leading-relaxed text-current">
+                        Karena masa berlaku UUD RIS hanya <strong>233 hari</strong>, di tingkat pusat belum terjadi pergantian kabinet (hanya <strong>Kabinet RIS pimpinan PM Moh. Hatta</strong>). Sebaliknya, rotasi kekuasaan di tingkat negara bagian berlangsung radikal: para Wali Negara dan parlemen daerah membubarkan diri demi bergabung kembali ke RI (Yogyakarta).
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7 order-1 lg:order-2">
+                    <div class="silver-sheen-card border-2 border-silverMetal/60 rounded-3xl p-5 sm:p-7 shadow-xl text-archiveInk transition-all duration-500">
+                        <div class="flex items-center justify-between font-mono text-xs text-silverMuted mb-4">
+                            <span>INDIKATOR_02 // SIRKULASI KEPEMIMPINAN</span>
+                            <span class="px-2.5 py-0.5 rounded bg-obsidian text-goldPrimary font-bold">1 KABINET PUSAT</span>
+                        </div>
+
+                        <div class="archival-visual rounded-2xl bg-obsidian p-6 sm:p-8 text-ivoryWhite border border-goldPrimary/30">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
+                                <div class="space-y-3">
+                                    <div class="p-3.5 rounded-xl bg-white/5 border border-silverMetal/20">
+                                        <span class="font-mono text-[10px] text-silverMetal">TINGKAT PUSAT (JAKARTA)</span>
+                                        <p class="font-display font-bold text-lg mt-0.5 text-white">0 Pergantian Kabinet</p>
+                                        <p class="text-xs text-silverMetal">Presiden Soekarno & PM Moh. Hatta menjabat penuh dari 27 Des 1949 – 17 Agu 1950.</p>
+                                    </div>
+                                    <div class="p-3.5 rounded-xl bg-goldPrimary/15 border border-goldPrimary/40">
+                                        <span class="font-mono text-[10px] text-goldPrimary">TINGKAT NEGARA BAGIAN</span>
+                                        <p class="font-display font-bold text-lg text-goldChampagne mt-0.5">13 Daerah Membubarkan Diri</p>
+                                        <p class="text-xs text-ivoryWhite/80">Wali Negara menyerahkan mandat kembali ke Republik Indonesia (Yogyakarta).</p>
+                                    </div>
+                                </div>
+                                <div class="text-center p-4 bg-black/40 rounded-2xl border border-silverMetal/20">
+                                    <div class="font-mono text-xs text-silverMetal mb-2">PENYUSUTAN NEGARA BAGIAN (1950)</div>
+                                    <div class="flex items-center justify-center gap-3 my-3">
+                                        <div>
+                                            <span class="block font-display font-extrabold text-4xl text-ivoryWhite">16</span>
+                                            <span class="font-mono text-[10px] text-silverMetal">DES 1949</span>
+                                        </div>
+                                        <span class="text-goldPrimary font-bold">→</span>
+                                        <div>
+                                            <span class="block font-display font-extrabold text-4xl text-goldPrimary">3</span>
+                                            <span class="font-mono text-[10px] text-goldPrimary">MEI 1950</span>
+                                        </div>
+                                        <span class="text-goldPrimary font-bold">→</span>
+                                        <div>
+                                            <span class="block font-display font-extrabold text-4xl text-goldChampagne">1</span>
+                                            <span class="font-mono text-[10px] text-goldChampagne">AGU 1950</span>
+                                        </div>
+                                    </div>
+                                    <p class="font-mono text-[11px] text-silverMetal">Transisi damai menuju Negara Kesatuan.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- CARD 03: POLA REKRUITMEN POLITIK -->
+            <article id="indikator-3" class="indicator-card grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-28 lg:mb-36">
+                <div class="lg:col-span-7">
+                    <div class="silver-sheen-card border-2 border-silverMetal/60 rounded-3xl p-5 sm:p-7 shadow-xl text-archiveInk transition-all duration-500">
+                        <div class="flex items-center justify-between font-mono text-xs text-silverMuted mb-4">
+                            <span>INDIKATOR_03 // SELEKSI PEJABAT NEGARA</span>
+                            <span class="px-2.5 py-0.5 rounded bg-obsidian text-goldPrimary font-bold">ZAKEN KABINET & DELEGASI</span>
+                        </div>
+
+                        <div class="archival-visual rounded-2xl bg-obsidian p-6 sm:p-8 text-ivoryWhite border border-goldPrimary/30">
+                            <span class="font-mono text-[11px] text-goldPrimary uppercase tracking-widest">4 FORMATUR PENYUSUN KABINET RIS</span>
+                            <h4 class="font-display font-bold text-xl sm:text-2xl mt-1 mb-4 text-white">Kompromi Tokoh Republik & Federal (BFO)</h4>
+                            
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+                                <div class="p-3 rounded-xl bg-white/5 border border-goldPrimary/40">
+                                    <div class="w-10 h-10 mx-auto rounded-full bg-goldPrimary text-obsidian font-display font-bold flex items-center justify-center text-sm mb-2">MH</div>
+                                    <p class="font-bold text-xs text-white">Drs. Moh. Hatta</p>
+                                    <p class="font-mono text-[10px] text-goldPrimary mt-0.5">Kubu Republik</p>
+                                </div>
+                                <div class="p-3 rounded-xl bg-white/5 border border-goldPrimary/40">
+                                    <div class="w-10 h-10 mx-auto rounded-full bg-goldPrimary text-obsidian font-display font-bold flex items-center justify-center text-sm mb-2">HB</div>
+                                    <p class="font-bold text-xs text-white">Sultan HB IX</p>
+                                    <p class="font-mono text-[10px] text-goldPrimary mt-0.5">Kubu Republik</p>
+                                </div>
+                                <div class="p-3 rounded-xl bg-white/5 border border-silverMetal/30">
+                                    <div class="w-10 h-10 mx-auto rounded-full bg-silverMetal text-obsidian font-display font-bold flex items-center justify-center text-sm mb-2">AA</div>
+                                    <p class="font-bold text-xs text-white">Anak Agung Gde</p>
+                                    <p class="font-mono text-[10px] text-silverMetal mt-0.5">Kubu Federal (NIT)</p>
+                                </div>
+                                <div class="p-3 rounded-xl bg-white/5 border border-silverMetal/30">
+                                    <div class="w-10 h-10 mx-auto rounded-full bg-silverMetal text-obsidian font-display font-bold flex items-center justify-center text-sm mb-2">SH</div>
+                                    <p class="font-bold text-xs text-white">Sultan Hamid II</p>
+                                    <p class="font-mono text-[10px] text-silverMetal mt-0.5">Kubu Federal (BFO)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 space-y-5">
+                    <div class="inline-block font-mono text-xs px-3 py-1 rounded border border-current opacity-70">
+                        03 / 05 — POLA REKRUITMEN POLITIK
+                    </div>
+                    <h3 class="font-display font-extrabold text-3xl sm:text-4xl leading-tight text-current">
+                        Representasi Delegasi Daerah & <span class="font-serifItalic italic font-normal text-4xl sm:text-5xl text-goldAntique">Zaken Kabinet</span>.
+                    </h3>
+                    <blockquote class="font-serifItalic text-2xl sm:text-3xl leading-snug opacity-90 border-l-4 border-goldPrimary pl-5 py-1">
+                        "Rekruitmen politik dilakukan secara terbuka merangkul kubu Republik dan kubu Federal dengan mengutamakan keahlian profesional."
+                    </blockquote>
+                    <p class="text-sm sm:text-base opacity-80 leading-relaxed text-current">
+                        Soekarno dipilih secara bulat oleh 16 utusan daerah bagian. Kabinet disusun sebagai <em>Zaken Kabinet</em> (kabinet ahli), sementara Senat (2 wakil per negara bagian) dan DPR RIS (150 kursi) direkrut melalui penunjukan representatif daerah.
+                    </p>
+                </div>
+            </article>
+
+            <!-- CARD 04: PEMILU -->
+            <article id="indikator-4" class="indicator-card grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-28 lg:mb-36">
+                <div class="lg:col-span-5 order-2 lg:order-1 space-y-5">
+                    <div class="inline-block font-mono text-xs px-3 py-1 rounded border border-current opacity-70">
+                        04 / 05 — PEMILIHAN UMUM (PEMILU)
+                    </div>
+                    <h3 class="font-display font-extrabold text-3xl sm:text-4xl leading-tight text-current">
+                        Amanat Konstitusi yang <span class="font-serifItalic italic font-normal text-4xl sm:text-5xl text-goldAntique">Belum Terlaksana</span>.
+                    </h3>
+                    <blockquote class="font-serifItalic text-2xl sm:text-3xl leading-snug opacity-90 border-l-4 border-silverMuted pl-5 py-1">
+                        "Pasal 111 UUD RIS menjanjikan pemilu nasional dalam waktu satu tahun, namun RIS bubar lebih cepat dari jadwal tersebut."
+                    </blockquote>
+                    <p class="text-sm sm:text-base opacity-80 leading-relaxed text-current">
+                        Selama periode 27 Desember 1949 hingga 17 Agustus 1950, <strong>Pemilu belum pernah dilaksanakan (0 kali)</strong> karena umur konstitusi hanya 8 bulan dan fokus bangsa tertuju pada kembalinya NKRI.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7 order-1 lg:order-2">
+                    <div class="silver-sheen-card border-2 border-silverMetal/60 rounded-3xl p-5 sm:p-7 shadow-xl text-archiveInk transition-all duration-500">
+                        <div class="flex items-center justify-between font-mono text-xs text-silverMuted mb-4">
+                            <span>INDIKATOR_04 // PARTISIPASI PEMILIHAN LANGSUNG</span>
+                            <span class="px-2.5 py-0.5 rounded bg-obsidian text-silverMetal font-bold">PASAL 111 UUD RIS</span>
+                        </div>
+
+                        <div class="archival-visual rounded-2xl bg-obsidian p-6 sm:p-8 text-ivoryWhite border border-silverMetal/30">
+                            <div class="inline-block border border-goldPrimary text-goldPrimary font-mono font-bold text-xs px-3 py-1 rounded mb-3">
+                                STATUS ARSIP: 0 KALI PEMILU NASIONAL
+                            </div>
+                            <p class="font-serifItalic italic text-xl sm:text-2xl text-ivoryWhite/90 bg-black/40 p-4 rounded-xl border border-silverMetal/15">
+                                "Dalam waktu satu tahun sesudah Konstitusi mulai berlaku, maka di seluruh Indonesia pemerintah memerintahkan mengadakan pemilihan bebas dan rahasia untuk menyusun Dewan Perwakilan Rakyat..."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- CARD 05: PEMENUHAN HAK-HAK DASAR (HAM) -->
+            <article id="indikator-5" class="indicator-card grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <div class="lg:col-span-7">
+                    <div class="silver-sheen-card border-2 border-silverMetal/60 rounded-3xl p-5 sm:p-7 shadow-xl text-archiveInk transition-all duration-500">
+                        <div class="flex items-center justify-between font-mono text-xs text-silverMuted mb-4">
+                            <span>INDIKATOR_05 // JAMINAN HAK ASASI MANUSIA</span>
+                            <span class="px-2.5 py-0.5 rounded bg-obsidian text-goldPrimary font-bold">BAB I BAGIAN V (PASAL 7–33)</span>
+                        </div>
+
+                        <div class="archival-visual rounded-2xl bg-obsidian p-6 sm:p-8 text-ivoryWhite border border-goldPrimary/30">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-silverMetal/15">
+                                <div>
+                                    <span class="font-mono text-xs text-goldPrimary">KEUNGGULAN UTAMA UUD RIS</span>
+                                    <h4 class="font-display font-bold text-2xl mt-0.5 text-white">27 Pasal Khusus HAM (Adopsi DUHAM PBB 1948)</h4>
+                                </div>
+                                <span class="font-display font-extrabold text-4xl text-goldPrimary">Pasal 7–33</span>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-5 text-xs">
+                                <div class="p-3.5 rounded-xl bg-white/5 border border-goldPrimary/30">
+                                    <span class="font-mono font-bold text-goldPrimary">PASAL 19 // KEBEBASAN PERS & PENDAPAT</span>
+                                    <p class="text-silverMetal mt-1">Setiap orang berhak atas kebebasan mempunyai dan mengeluarkan pendapat tanpa pembredelan pers.</p>
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-white/5 border border-goldPrimary/30">
+                                    <span class="font-mono font-bold text-goldPrimary">PASAL 20 // HAK BERKUMPUL & BERSERIKAT</span>
+                                    <p class="text-silverMetal mt-1">Hak penduduk untuk berkumpul dan berapat secara damai diakui dan dijamin penuh oleh konstitusi.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 space-y-5">
+                    <div class="inline-block font-mono text-xs px-3 py-1 rounded border border-current opacity-70">
+                        05 / 05 — PEMENUHAN HAK-HAK DASAR
+                    </div>
+                    <h3 class="font-display font-extrabold text-3xl sm:text-4xl leading-tight text-current">
+                        Pelopor Konstitusi HAM Terlengkap (<span class="font-serifItalic italic font-normal text-4xl sm:text-5xl text-goldAntique">27 Pasal Eksplisit</span>).
+                    </h3>
+                    <blockquote class="font-serifItalic text-2xl sm:text-3xl leading-snug opacity-90 border-l-4 border-goldPrimary pl-5 py-1">
+                        "Menyerap langsung Deklarasi Universal HAM PBB 1948, UUD RIS menjadi tonggak jaminan hak sipil dan kebebasan pers di Indonesia."
+                    </blockquote>
+                    <p class="text-sm sm:text-base opacity-80 leading-relaxed text-current">
+                        UUD RIS menjadi konstitusi pertama di Indonesia yang memuat hak asasi manusia secara sangat rinci dalam <strong>27 pasal khusus (Pasal 7 hingga Pasal 33)</strong>, menjamin kebebasan pers, beragama, berserikat, serta perlindungan hukum yang setara.
+                    </p>
+                </div>
+            </article>
+        </div>
+
+        <!-- Smooth Organic Transition Blend from White to Deep Black (Zero Hard Border) -->
+        <div class="section-blend-to-dark" aria-hidden="true"></div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 4: PINNED HORIZONTAL PHOTO SCROLL
+         (Jejak Historis & Momen Kunci UUD RIS)
+         Effect: Clean Pinned Horizontal Showcase (No Hud, No Dots, Pure Immersion)
+    ════════════════════════════════════════════ -->
+    <section class="horizontal-scroll-section" id="horizontalScrollSection">
+      <div class="horizontal-pin-sticky" id="horizontalPinSticky">
+
+        <!-- Background Contours — subtle luxury gold rings -->
+        <div class="horizontal-bg-contours" aria-hidden="true">
+          <svg viewBox="0 0 1440 900" fill="none" preserveAspectRatio="none">
+            <ellipse cx="720" cy="450" rx="680" ry="380" stroke="rgba(212,175,55,0.14)" stroke-width="1.2" stroke-dasharray="6 8" fill="none"/>
+            <ellipse cx="720" cy="450" rx="900" ry="520" stroke="rgba(212,175,55,0.09)" stroke-width="1" fill="none"/>
+            <ellipse cx="280" cy="620" rx="420" ry="260" stroke="rgba(212,175,55,0.12)" stroke-width="0.8" fill="none"/>
+            <ellipse cx="1180" cy="240" rx="380" ry="220" stroke="rgba(212,175,55,0.11)" stroke-width="0.8" stroke-dasharray="4 6" fill="none"/>
+          </svg>
+        </div>
+
+        <!-- Horizontal Scatter Gallery Track — Lando Norris reference style (Extended 16-photo gallery) -->
+        <div class="horizontal-track" id="horizontalTrack">
+
+          <!-- ── CLUSTER 1: Staggered Duo ── -->
+          <div class="hp-col hp-col--scatter">
+            <!-- Photo 01: Small, top-left -->
+            <div class="hp-item hp-item--sm hp-align-start">
+              <span class="hp-label">01 · DEN HAAG, AGUSTUS 1949</span>
+              <div class="hp-frame">
+                <img src="assets/img/11274493.jpg"
+                     alt="Arsip KMB Ridderzaal Den Haag 1949"
+                     class="hp-img hp-crop-center"
+                     loading="eager" decoding="async" />
+              </div>
+            </div>
+
+            <!-- Photo 02: Medium, bottom-right -->
+            <div class="hp-item hp-item--md hp-align-end">
+              <span class="hp-label">02 · YOGYAKARTA, JULI 1949</span>
+              <div class="hp-frame">
+                <img src="assets/img/11274493.jpg"
+                     alt="Arsip Delegasi Federal BFO Yogyakarta"
+                     class="hp-img hp-crop-left hp-tone-crisp"
+                     loading="eager" decoding="async" />
+              </div>
+            </div>
+          </div><!-- /.hp-col--scatter 1 -->
+
+          <!-- ── CLUSTER 2: Opposite Staggered Duo ── -->
+          <div class="hp-col hp-col--scatter">
+            <!-- Photo 03: Medium, top-right -->
+            <div class="hp-item hp-item--md hp-align-end hp-shift-up">
+              <span class="hp-label">03 · RIDDERZAAL, NOVEMBER 1949</span>
+              <div class="hp-frame">
+                <img src="assets/img/11274493.jpg"
+                     alt="Penandatanganan Piagam KMB Den Haag"
+                     class="hp-img hp-crop-right hp-tone-soft"
+                     loading="eager" decoding="async" />
+              </div>
+            </div>
+
+            <!-- Photo 04: Small, bottom-left -->
+            <div class="hp-item hp-item--sm hp-align-start hp-shift-down">
+              <span class="hp-label">04 · AMSTERDAM, 27 DES 1949</span>
+              <div class="hp-frame">
+                <img src="assets/img/11274493.jpg"
+                     alt="Penyerahan Kedaulatan Paleis op de Dam"
+                     class="hp-img hp-crop-top"
+                     loading="eager" decoding="async" />
+              </div>
+            </div>
+          </div><!-- /.hp-col--scatter 2 -->
+
+          <!-- ── CLUSTER 3: Featured Portrait + Inline Quote (Scroll-033 Reference Anchor) ── -->
+          <div class="hp-col hp-col--featured">
+            <!-- Photo 05: Large portrait -->
+            <div class="hp-item hp-item--lg hp-pos-center">
+              <span class="hp-label">05 · JAKARTA, 17 DESEMBER 1949</span>
+              <div class="hp-frame">
+                <img src="assets/img/11274493.jpg"
+                     alt="Pelantikan Presiden Soekarno &amp; Zaken Kabinet RIS"
+                     class="hp-img hp-crop-left"
+                     loading="eager" decoding="async" />
+              </div>
+            </div>
+
+            <!-- Quote block beside large photo -->
+            <div class="hp-quote-block">
+              <p class="hp-quote__text">
+                &ldquo;Sejak kami menginjakkan kaki di podium Konferensi Meja Bundar, kami tahu—Indonesia yang berdaulat, demokratis, dan bersatu adalah satu-satunya tujuan perjuangan bangsa.&rdquo;
+              </p>
+              <div class="hp-quote__author">
+                <img src="assets/img/UUDRIS_gold.png" alt="Tanda Tangan Hatta" class="hp-quote__sig" />
+                <div>
+                  <span class="hp-quote__name">Drs. Mohammad Hatta</span>
+                  <span class="hp-quote__role">PM &amp; Wapres RIS (1949–1950)</span>
+                </div>
+              </div>
+            </div>
+          </div><!-- /.hp-col--featured -->
+
+          <!-- ── CLUSTER 4: Wide Editorial Trio ── -->
+          <div class="hp-col hp-col--trio">
+            <div class="hp-trio-lane">
+              <!-- Photo 06: Wide landscape top -->
+              <div class="hp-item hp-item--wide hp-align-start">
+                <span class="hp-label">06 · ISTANA MERDEKA, DES 1949</span>
+                <div class="hp-frame">
+                  <img src="assets/img/11274493.jpg"
+                       alt="Pembentukan Kabinet RIS Pertama"
+                       class="hp-img hp-crop-wide hp-tone-crisp"
+                       loading="eager" decoding="async" />
+                </div>
+              </div>
+
+              <!-- Photo 07: Medium bottom-right -->
+              <div class="hp-item hp-item--md hp-align-end">
+                <span class="hp-label">07 · PEJAMBON, FEBRUARI 1950</span>
+                <div class="hp-frame">
+                  <img src="assets/img/11274493.jpg"
+                       alt="Sidang Parlemen Bikameral Pejambon"
+                       class="hp-img hp-crop-center"
+                       loading="eager" decoding="async" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Photo 08: Small vertically centered offset right -->
+            <div class="hp-item hp-item--sm hp-align-center">
+              <span class="hp-label">08 · BANDUNG · PASUNDAN, 1950</span>
+              <div class="hp-frame">
+                <img src="assets/img/11274493.jpg"
+                     alt="Arsip Negara Bagian Pasundan RIS"
+                     class="hp-img hp-crop-right hp-tone-warm"
+                     loading="eager" decoding="async" />
+              </div>
+            </div>
+          </div><!-- /.hp-col--trio -->
+
+          <!-- ── CLUSTER 5: Scatter Duo (Wide + Tall) ── -->
+          <div class="hp-col hp-col--scatter hp-col--scatter-wide">
+            <!-- Photo 09: Medium top-right -->
+            <div class="hp-item hp-item--md hp-align-end">
+              <span class="hp-label">09 · MAKASSAR · NIT, 1950</span>
+              <div class="hp-frame">
+                <img src="assets/img/11274493.jpg"
+                     alt="Negara Indonesia Timur dalam Federasi RIS"
+                     class="hp-img hp-crop-top hp-tone-soft"
+                     loading="eager" decoding="async" />
+              </div>
+            </div>
+
+            <!-- Photo 10: Wide bottom-left -->
+            <div class="hp-item hp-item--wide hp-align-start">
+              <span class="hp-label">10 · MEDAN · SUMATERA TIMUR, 1950</span>
+              <div class="hp-frame">
+                <img src="assets/img/11274493.jpg"
+                     alt="Konstituen Sumatera Timur dalam RIS"
+                     class="hp-img hp-crop-wide"
+                     loading="eager" decoding="async" />
+              </div>
+            </div>
+          </div><!-- /.hp-col--scatter 5 -->
+
+          <!-- ── CLUSTER 6: Second Large Showcase + Duo Pair ── -->
+          <div class="hp-col hp-col--showcase">
+            <!-- Photo 11: Large showcase -->
+            <div class="hp-item hp-item--lg hp-pos-center">
+              <span class="hp-label">11 · SENAT &amp; DPR RIS, MARET 1950</span>
+              <div class="hp-frame">
+                <img src="assets/img/11274493.jpg"
+                     alt="Legislatif Bikameral Senat dan DPR RIS"
+                     class="hp-img hp-crop-center hp-tone-crisp"
+                     loading="eager" decoding="async" />
+              </div>
+            </div>
+
+            <div class="hp-sub-col">
+              <!-- Photo 12: Small top -->
+              <div class="hp-item hp-item--sm hp-align-start">
+                <span class="hp-label">12 · SURABAYA · JAWA TIMUR, 1950</span>
+                <div class="hp-frame">
+                  <img src="assets/img/11274493.jpg"
+                       alt="Integrasi Jawa Timur ke Republik"
+                       class="hp-img hp-crop-left"
+                       loading="eager" decoding="async" />
+                </div>
+              </div>
+
+              <!-- Photo 13: Medium bottom -->
+              <div class="hp-item hp-item--md hp-align-end">
+                <span class="hp-label">13 · PONTIANAK · KALBAR, 1950</span>
+                <div class="hp-frame">
+                  <img src="assets/img/11274493.jpg"
+                       alt="Daerah Istimewa Kalimantan Barat RIS"
+                       class="hp-img hp-crop-right hp-tone-warm"
+                       loading="eager" decoding="async" />
+                </div>
+              </div>
+            </div>
+          </div><!-- /.hp-col--showcase -->
+
+          <!-- ── CLUSTER 7: Late Transition Duo ── -->
+          <div class="hp-col hp-col--scatter">
+            <!-- Photo 14: Small top-left -->
+            <div class="hp-item hp-item--sm hp-align-start hp-shift-down">
+              <span class="hp-label">14 · PIAGAM PERSETUJUAN, MEI 1950</span>
+              <div class="hp-frame">
+                <img src="assets/img/11274493.jpg"
+                     alt="Piagam Persetujuan RIS dan RI 19 Mei 1950"
+                     class="hp-img hp-crop-top hp-tone-soft"
+                     loading="eager" decoding="async" />
+              </div>
+            </div>
+
+            <!-- Photo 15: Wide bottom-right -->
+            <div class="hp-item hp-item--wide hp-align-end">
+              <span class="hp-label">15 · YOGYAKARTA · NKRI, JULI 1950</span>
+              <div class="hp-frame">
+                <img src="assets/img/11274493.jpg"
+                     alt="Konsolidasi Kembali Negara Kesatuan"
+                     class="hp-img hp-crop-wide hp-tone-crisp"
+                     loading="eager" decoding="async" />
+              </div>
+            </div>
+          </div><!-- /.hp-col--scatter 7 -->
+
+          <!-- ── CLUSTER 8: Closing Finale Portrait ── -->
+          <div class="hp-col hp-col--finale">
+            <!-- Photo 16: Large closing landmark -->
+            <div class="hp-item hp-item--lg hp-pos-center">
+              <span class="hp-label">16 · JAKARTA, 17 AGUSTUS 1950</span>
+              <div class="hp-frame">
+                <img src="assets/img/11274493.jpg"
+                     alt="Kembalinya Negara Kesatuan Republik Indonesia 1950"
+                     class="hp-img hp-crop-left"
+                     loading="eager" decoding="async" />
+              </div>
+            </div>
+
+            <div class="hp-finale-caption">
+              <span class="hp-finale-eyebrow">EPILOG KONSTITUSI · 1949–1950</span>
+              <p class="hp-finale-text">
+                Dari Konferensi Meja Bundar hingga proklamasi kembali ke Negara Kesatuan Republik Indonesia pada 17 Agustus 1950—babak penting pembuktian kedaulatan bangsa.
+              </p>
+            </div>
+          </div><!-- /.hp-col--finale -->
+
+          <!-- End Spacer -->
+          <div class="hp-end-gap" aria-hidden="true"></div>
+
+        </div><!-- /.horizontal-track -->
+
+      </div><!-- /.horizontal-pin-sticky -->
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SECTION: HIGH-LINE TEXT WIPE REVEAL
+         Single large centered quote — Constitution text
+    ════════════════════════════════════════════ -->
+    <section class="highline-text-section" id="highlineTextSection" aria-label="Kutipan Konstitusi">
+      <div class="highline-text-container">
+
+        <!-- Decorative gold rule top -->
+        <div class="ht-rule" aria-hidden="true"></div>
+
+        <!-- Label -->
+        <p class="ht-eyebrow" aria-hidden="true">Pasal 1 · UUD RIS 1949</p>
+
+        <!-- Line 1 -->
+        <div class="ht-line">
+          <span class="ht-reveal" aria-hidden="true">
+            <span class="ht-text">Negara berbentuk serikat (federasi) yang demokratis</span>
+            <span class="ht-wipe"></span>
+          </span>
+        </div>
+
+        <!-- Line 2 -->
+        <div class="ht-line ht-line--delay-1">
+          <span class="ht-reveal" aria-hidden="true">
+            <span class="ht-text">dengan sistem pemerintahan parlementer</span>
+            <span class="ht-wipe"></span>
+          </span>
+        </div>
+
+        <!-- Line 3 -->
+        <div class="ht-line ht-line--delay-2">
+          <span class="ht-reveal" aria-hidden="true">
+            <span class="ht-text">(kabinet dipimpin oleh perdana menteri,</span>
+            <span class="ht-wipe"></span>
+          </span>
+        </div>
+
+        <!-- Line 4 -->
+        <div class="ht-line ht-line--delay-3">
+          <span class="ht-reveal" aria-hidden="true">
+            <span class="ht-text">sementara presiden sebagai kepala negara)</span>
+            <span class="ht-wipe"></span>
+          </span>
+        </div>
+
+        <!-- Accessible full text for screen readers -->
+        <p class="ht-sr-only">Negara berbentuk serikat (federasi) yang demokratis dengan sistem pemerintahan parlementer (kabinet dipimpin oleh perdana menteri, sementara presiden sebagai kepala negara)</p>
+
+        <!-- Bottom rule -->
+        <div class="ht-rule ht-rule--bottom" aria-hidden="true"></div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 5: DUAL INTERACTIVE SPLIT SECTION
+         ("ON TRACK" vs "OFF TRACK")
+         Inspired by scroll-050.png (.otot-home-layout)
+    ════════════════════════════════════════════ -->
+    <section class="split-dual-section" id="splitDualSection">
+      <div class="split-dual-container">
+        
+        <!-- Header: Dual Titles with Hand-Drawn Graffiti Overlay -->
+        <div class="split-dual-header">
+          
+          <!-- Left Title: ON TRACK (Di Meja Perundingan) -->
+          <div class="split-col-header split-col-header--left">
+            <div class="split-title-wrap">
+              <span class="split-title-text font-display">ON TRACK</span>
+              <!-- Graffiti Hand-Drawn Script Overlay -->
+              <svg class="split-graffiti-overlay" viewBox="0 0 160 90" fill="none" aria-hidden="true">
+                <path d="M20 70 C10 40, 25 10, 60 15 C85 18, 70 65, 45 75 C25 80, 20 40, 40 20 C60 5, 80 15, 85 45 C90 70, 75 80, 60 82" 
+                      stroke="#D4AF37" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" filter="drop-shadow(0 0 12px rgba(212,175,55,0.85))"/>
+                <path d="M90 20 L95 80 M95 30 L135 75 L138 18" 
+                      stroke="#D4AF37" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" filter="drop-shadow(0 0 12px rgba(212,175,55,0.85))"/>
+              </svg>
+            </div>
+            <div class="split-subtitle">DI MEJA PERUNDINGAN // DIPLOMASI FORMAL</div>
+            <p class="split-desc">
+              Keputusan konstitusional resmi, perumusan 197 pasal federal, tata kelola quasi-parlementer, serta konsensus batas teritorial 16 negara bagian.
+            </p>
+          </div>
+
+          <!-- Right Title: OFF TRACK (Di Luar Sidang) -->
+          <div class="split-col-header split-col-header--right">
+            <div class="split-title-wrap">
+              <span class="split-title-text font-display">OFF TRACK</span>
+            </div>
+            <div class="split-subtitle">DI LUAR RUANG SIDANG // GERAKAN WARGA</div>
+            <p class="split-desc">
+              Dinamika sosiologis di jalanan, konsensus pers merdeka lewat 27 pasal HAM, perdebatan akar rumput, hingga lahirnya Mosi Integral Natsir 1950.
+            </p>
+          </div>
+
+        </div><!-- /.split-dual-header -->
+
+        <!-- Interactive Dual Expandable Cards -->
+        <div class="split-cards-track">
+          
+          <!-- Card 1: On-Track Telemetry Cockpit -->
+          <div class="split-card split-card--on" id="splitCardOn">
+            <div class="split-card__inner">
+              <div class="split-card__top">
+                <span class="split-card__badge">DIPLOMASI NEGARA // KABINET HATTA</span>
+                <span class="split-card__status">TERATIFIKASI</span>
+              </div>
+
+              <div class="split-card__content">
+                <span class="font-mono text-xs text-goldPrimary tracking-widest uppercase">STRUKTUR KONSTITUSIONAL</span>
+                <h3 class="split-card__heading">
+                  197 Pasal <span class="font-serifItalic italic font-normal text-goldPrimary">Federalisme Konstitusional</span>
+                </h3>
+                <p class="split-card__para">
+                  Konstitusi RIS memuat arsitektur hukum terlengkap untuk menjamin otonomi 16 negara bagian dengan sistem check and balance antara Presiden, Senat Federal, dan DPR RIS.
+                </p>
+
+                <!-- Cockpit Metrics Grid -->
+                <div class="split-metrics-grid">
+                  <div class="metric-box">
+                    <span class="metric-box__num">197</span>
+                    <span class="metric-box__label">PASAL RESMI</span>
+                  </div>
+                  <div class="metric-box">
+                    <span class="metric-box__num">16</span>
+                    <span class="metric-box__label">WILAYAH BAGIAN</span>
+                  </div>
+                  <div class="metric-box">
+                    <span class="metric-box__num">150</span>
+                    <span class="metric-box__label">KURSI DPR RIS</span>
+                  </div>
+                  <div class="metric-box">
+                    <span class="metric-box__num">01</span>
+                    <span class="metric-box__label">ZAKEN KABINET</span>
+                  </div>
+                </div>
+
+                <div class="split-card__actions">
+                  <button onclick="openCompareModal()" class="split-btn split-btn--gold">
+                    <span>TELUSURI PASAL RESMI</span>
+                    <span class="split-btn__icon">⟶</span>
+                  </button>
+                  <span class="font-mono text-xs text-silverMuted">SUMBER: LEMBARAN NEGARA 1949 NO. 533</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Off-Track Cultural Movement -->
+          <div class="split-card split-card--off" id="splitCardOff">
+            <div class="split-card__inner">
+              <div class="split-card__top">
+                <span class="split-card__badge">GERAKAN RAKYAT // AKAR RUMPUT</span>
+                <span class="split-card__status is-silver">ASPIRASI PUBLIK</span>
+              </div>
+
+              <div class="split-card__content">
+                <span class="font-mono text-xs text-silverMetal tracking-widest uppercase">KEBEBASAN SIPIL &amp; MOSI INTEGRAL</span>
+                <h3 class="split-card__heading">
+                  27 Pasal HAM <span class="font-serifItalic italic font-normal text-white">&amp; Mosi Natsir</span>
+                </h3>
+                <p class="split-card__para">
+                  Di luar ruang sidang elit, rakyat memanfaatkan jaminan kebebasan berpendapat Pasal 19 untuk menggelar rapat akbar, menerbitkan koran independen, dan menuntut pembubaran negara federal bentukan Belanda.
+                </p>
+
+                <!-- Civil Metrics Grid -->
+                <div class="split-metrics-grid">
+                  <div class="metric-box is-silver">
+                    <span class="metric-box__num">27</span>
+                    <span class="metric-box__label">PASAL HAK ASASI</span>
+                  </div>
+                  <div class="metric-box is-silver">
+                    <span class="metric-box__num">0</span>
+                    <span class="metric-box__label">PEMBREDELAN PERS</span>
+                  </div>
+                  <div class="metric-box is-silver">
+                    <span class="metric-box__num">100%</span>
+                    <span class="metric-box__label">RESOLUSI DAMAI</span>
+                  </div>
+                  <div class="metric-box is-silver">
+                    <span class="metric-box__num">17 AGS</span>
+                    <span class="metric-box__label">KEMBALI KE NKRI</span>
+                  </div>
+                </div>
+
+                <div class="split-card__actions">
+                  <a href="#indikator-5" class="split-btn split-btn--silver">
+                    <span>LIHAT PIAGAM HAM</span>
+                    <span class="split-btn__icon">⟶</span>
+                  </a>
+                  <span class="font-mono text-xs text-silverMuted">HISTORIS: MOSI INTEGRAL 3 APRIL 1950</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.split-cards-track -->
+
+      </div><!-- /.split-dual-container -->
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 6: THE FEDERATION ARCHIVE GRID
+         (16 Negara Bagian & Daerah Otonom RIS)
+         Inspired by scroll-067.png (Helmet Grid Frame)
+    ════════════════════════════════════════════ -->
+    <section class="federation-grid-section" id="federationSection">
+      <div class="federation-container">
+
+        <!-- Grid Section Header -->
+        <div class="federation-header">
+          <div class="hud-tag">
+            <span class="hud-tag__dot">✦</span>
+            <span class="hud-tag__text">THE FEDERATION INVENTORY // 16 BAGIAN</span>
+          </div>
+          <h2 class="federation-title">
+            KATALOG 16 DAERAH BAGIAN <span class="font-serifItalic italic font-normal text-goldPrimary">&amp; NEGARA BAGIAN RIS</span>
+          </h2>
+          <p class="federation-desc">
+            Berdasarkan Bab I Bagian II Pasal 2 Konstitusi RIS 1949, wilayah Republik Indonesia Serikat terdiri dari 7 Negara Bagian dan 9 Daerah Otonom dengan hak pemerintahan mandiri.
+          </p>
+
+          <!-- Filter Pills -->
+          <div class="federation-filters" id="federationFilters">
+            <button class="fed-filter-btn active" data-filter="all">SEMUA ARSIP (16)</button>
+            <button class="fed-filter-btn" data-filter="negara">NEGARA BAGIAN (7)</button>
+            <button class="fed-filter-btn" data-filter="otonom">DAERAH OTONOM (9)</button>
+          </div>
+        </div>
+
+        <!-- 4-Column Responsive Grid with Notched Chamfered Frames -->
+        <div class="federation-grid" id="federationGrid">
+
+          <!-- 01: Negara Republik Indonesia -->
+          <div class="fed-card" data-category="negara">
+            <div class="fed-card__frame-wrap">
+              <svg class="fed-card__svg-frame" viewBox="0 0 407 411" fill="none" preserveAspectRatio="none">
+                <path d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 0-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" stroke="#D4AF37" stroke-width="1.8" vector-effect="non-scaling-stroke"></path>
+              </svg>
+              <div class="fed-card__inner">
+                <div class="fed-card__visual">
+                  <div class="fed-card__emblem">🏛️</div>
+                  <span class="fed-card__type">NEGARA BAGIAN</span>
+                </div>
+                <div class="fed-card__content">
+                  <h4 class="fed-card__name">Negara Republik Indonesia</h4>
+                  <span class="fed-card__capital">Ibukota: Yogyakarta</span>
+                </div>
+                <div class="fed-card__notch-meta">
+                  <span class="fed-card__code">YOGYAKARTA</span>
+                  <span class="fed-card__year">1949</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 02: Negara Indonesia Timur -->
+          <div class="fed-card" data-category="negara">
+            <div class="fed-card__frame-wrap">
+              <svg class="fed-card__svg-frame" viewBox="0 0 407 411" fill="none" preserveAspectRatio="none">
+                <path d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 0-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" stroke="#D4AF37" stroke-width="1.8" vector-effect="non-scaling-stroke"></path>
+              </svg>
+              <div class="fed-card__inner">
+                <div class="fed-card__visual">
+                  <div class="fed-card__emblem">🌊</div>
+                  <span class="fed-card__type">NEGARA BAGIAN</span>
+                </div>
+                <div class="fed-card__content">
+                  <h4 class="fed-card__name">Negara Indonesia Timur</h4>
+                  <span class="fed-card__capital">Ibukota: Makassar</span>
+                </div>
+                <div class="fed-card__notch-meta">
+                  <span class="fed-card__code">MAKASSAR</span>
+                  <span class="fed-card__year">1949</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 03: Negara Pasundan -->
+          <div class="fed-card" data-category="negara">
+            <div class="fed-card__frame-wrap">
+              <svg class="fed-card__svg-frame" viewBox="0 0 407 411" fill="none" preserveAspectRatio="none">
+                <path d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 0-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" stroke="#D4AF37" stroke-width="1.8" vector-effect="non-scaling-stroke"></path>
+              </svg>
+              <div class="fed-card__inner">
+                <div class="fed-card__visual">
+                  <div class="fed-card__emblem">⛰️</div>
+                  <span class="fed-card__type">NEGARA BAGIAN</span>
+                </div>
+                <div class="fed-card__content">
+                  <h4 class="fed-card__name">Negara Pasundan</h4>
+                  <span class="fed-card__capital">Ibukota: Bandung</span>
+                </div>
+                <div class="fed-card__notch-meta">
+                  <span class="fed-card__code">BANDUNG</span>
+                  <span class="fed-card__year">1949</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 04: Negara Jawa Timur -->
+          <div class="fed-card" data-category="negara">
+            <div class="fed-card__frame-wrap">
+              <svg class="fed-card__svg-frame" viewBox="0 0 407 411" fill="none" preserveAspectRatio="none">
+                <path d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 0-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" stroke="#D4AF37" stroke-width="1.8" vector-effect="non-scaling-stroke"></path>
+              </svg>
+              <div class="fed-card__inner">
+                <div class="fed-card__visual">
+                  <div class="fed-card__emblem">⚡</div>
+                  <span class="fed-card__type">NEGARA BAGIAN</span>
+                </div>
+                <div class="fed-card__content">
+                  <h4 class="fed-card__name">Negara Jawa Timur</h4>
+                  <span class="fed-card__capital">Ibukota: Surabaya</span>
+                </div>
+                <div class="fed-card__notch-meta">
+                  <span class="fed-card__code">SURABAYA</span>
+                  <span class="fed-card__year">1949</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 05: Negara Madura -->
+          <div class="fed-card" data-category="negara">
+            <div class="fed-card__frame-wrap">
+              <svg class="fed-card__svg-frame" viewBox="0 0 407 411" fill="none" preserveAspectRatio="none">
+                <path d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 0-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" stroke="#D4AF37" stroke-width="1.8" vector-effect="non-scaling-stroke"></path>
+              </svg>
+              <div class="fed-card__inner">
+                <div class="fed-card__visual">
+                  <div class="fed-card__emblem">⛵</div>
+                  <span class="fed-card__type">NEGARA BAGIAN</span>
+                </div>
+                <div class="fed-card__content">
+                  <h4 class="fed-card__name">Negara Madura</h4>
+                  <span class="fed-card__capital">Ibukota: Pamekasan</span>
+                </div>
+                <div class="fed-card__notch-meta">
+                  <span class="fed-card__code">PAMEKASAN</span>
+                  <span class="fed-card__year">1949</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 06: Negara Sumatera Selatan -->
+          <div class="fed-card" data-category="negara">
+            <div class="fed-card__frame-wrap">
+              <svg class="fed-card__svg-frame" viewBox="0 0 407 411" fill="none" preserveAspectRatio="none">
+                <path d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 0-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" stroke="#D4AF37" stroke-width="1.8" vector-effect="non-scaling-stroke"></path>
+              </svg>
+              <div class="fed-card__inner">
+                <div class="fed-card__visual">
+                  <div class="fed-card__emblem">🌉</div>
+                  <span class="fed-card__type">NEGARA BAGIAN</span>
+                </div>
+                <div class="fed-card__content">
+                  <h4 class="fed-card__name">Negara Sumatera Selatan</h4>
+                  <span class="fed-card__capital">Ibukota: Palembang</span>
+                </div>
+                <div class="fed-card__notch-meta">
+                  <span class="fed-card__code">PALEMBANG</span>
+                  <span class="fed-card__year">1949</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 07: Negara Sumatera Timur -->
+          <div class="fed-card" data-category="negara">
+            <div class="fed-card__frame-wrap">
+              <svg class="fed-card__svg-frame" viewBox="0 0 407 411" fill="none" preserveAspectRatio="none">
+                <path d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 0-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" stroke="#D4AF37" stroke-width="1.8" vector-effect="non-scaling-stroke"></path>
+              </svg>
+              <div class="fed-card__inner">
+                <div class="fed-card__visual">
+                  <div class="fed-card__emblem">🌴</div>
+                  <span class="fed-card__type">NEGARA BAGIAN</span>
+                </div>
+                <div class="fed-card__content">
+                  <h4 class="fed-card__name">Negara Sumatera Timur</h4>
+                  <span class="fed-card__capital">Ibukota: Medan</span>
+                </div>
+                <div class="fed-card__notch-meta">
+                  <span class="fed-card__code">MEDAN</span>
+                  <span class="fed-card__year">1949</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 08: Daerah Otonom Kalimantan Barat -->
+          <div class="fed-card" data-category="otonom">
+            <div class="fed-card__frame-wrap">
+              <svg class="fed-card__svg-frame" viewBox="0 0 407 411" fill="none" preserveAspectRatio="none">
+                <path d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 0-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" stroke="#D4AF37" stroke-width="1.8" vector-effect="non-scaling-stroke"></path>
+              </svg>
+              <div class="fed-card__inner">
+                <div class="fed-card__visual">
+                  <div class="fed-card__emblem">🧭</div>
+                  <span class="fed-card__type is-otonom">DAERAH OTONOM</span>
+                </div>
+                <div class="fed-card__content">
+                  <h4 class="fed-card__name">Kalimantan Barat</h4>
+                  <span class="fed-card__capital">Pusat: Pontianak</span>
+                </div>
+                <div class="fed-card__notch-meta">
+                  <span class="fed-card__code">PONTIANAK</span>
+                  <span class="fed-card__year">1949</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 09: Dayak Besar -->
+          <div class="fed-card" data-category="otonom">
+            <div class="fed-card__frame-wrap">
+              <svg class="fed-card__svg-frame" viewBox="0 0 407 411" fill="none" preserveAspectRatio="none">
+                <path d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 0-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" stroke="#D4AF37" stroke-width="1.8" vector-effect="non-scaling-stroke"></path>
+              </svg>
+              <div class="fed-card__inner">
+                <div class="fed-card__visual">
+                  <div class="fed-card__emblem">🛡️</div>
+                  <span class="fed-card__type is-otonom">DAERAH OTONOM</span>
+                </div>
+                <div class="fed-card__content">
+                  <h4 class="fed-card__name">Dayak Besar</h4>
+                  <span class="fed-card__capital">Pusat: Banjarmasin</span>
+                </div>
+                <div class="fed-card__notch-meta">
+                  <span class="fed-card__code">BANJARMASIN</span>
+                  <span class="fed-card__year">1949</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 10: Daerah Banjar -->
+          <div class="fed-card" data-category="otonom">
+            <div class="fed-card__frame-wrap">
+              <svg class="fed-card__svg-frame" viewBox="0 0 407 411" fill="none" preserveAspectRatio="none">
+                <path d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 0-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" stroke="#D4AF37" stroke-width="1.8" vector-effect="non-scaling-stroke"></path>
+              </svg>
+              <div class="fed-card__inner">
+                <div class="fed-card__visual">
+                  <div class="fed-card__emblem">💎</div>
+                  <span class="fed-card__type is-otonom">DAERAH OTONOM</span>
+                </div>
+                <div class="fed-card__content">
+                  <h4 class="fed-card__name">Daerah Banjar</h4>
+                  <span class="fed-card__capital">Pusat: Martapura</span>
+                </div>
+                <div class="fed-card__notch-meta">
+                  <span class="fed-card__code">MARTAPURA</span>
+                  <span class="fed-card__year">1949</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 11: Kalimantan Tenggara -->
+          <div class="fed-card" data-category="otonom">
+            <div class="fed-card__frame-wrap">
+              <svg class="fed-card__svg-frame" viewBox="0 0 407 411" fill="none" preserveAspectRatio="none">
+                <path d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 0-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" stroke="#D4AF37" stroke-width="1.8" vector-effect="non-scaling-stroke"></path>
+              </svg>
+              <div class="fed-card__inner">
+                <div class="fed-card__visual">
+                  <div class="fed-card__emblem">🌅</div>
+                  <span class="fed-card__type is-otonom">DAERAH OTONOM</span>
+                </div>
+                <div class="fed-card__content">
+                  <h4 class="fed-card__name">Kalimantan Tenggara</h4>
+                  <span class="fed-card__capital">Pusat: Kotabaru</span>
+                </div>
+                <div class="fed-card__notch-meta">
+                  <span class="fed-card__code">KOTABARU</span>
+                  <span class="fed-card__year">1949</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 12: Kalimantan Timur -->
+          <div class="fed-card" data-category="otonom">
+            <div class="fed-card__frame-wrap">
+              <svg class="fed-card__svg-frame" viewBox="0 0 407 411" fill="none" preserveAspectRatio="none">
+                <path d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 0-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" stroke="#D4AF37" stroke-width="1.8" vector-effect="non-scaling-stroke"></path>
+              </svg>
+              <div class="fed-card__inner">
+                <div class="fed-card__visual">
+                  <div class="fed-card__emblem">🌲</div>
+                  <span class="fed-card__type is-otonom">DAERAH OTONOM</span>
+                </div>
+                <div class="fed-card__content">
+                  <h4 class="fed-card__name">Kalimantan Timur</h4>
+                  <span class="fed-card__capital">Pusat: Samarinda</span>
+                </div>
+                <div class="fed-card__notch-meta">
+                  <span class="fed-card__code">SAMARINDA</span>
+                  <span class="fed-card__year">1949</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 13: Bangka -->
+          <div class="fed-card" data-category="otonom">
+            <div class="fed-card__frame-wrap">
+              <svg class="fed-card__svg-frame" viewBox="0 0 407 411" fill="none" preserveAspectRatio="none">
+                <path d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 0-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" stroke="#D4AF37" stroke-width="1.8" vector-effect="non-scaling-stroke"></path>
+              </svg>
+              <div class="fed-card__inner">
+                <div class="fed-card__visual">
+                  <div class="fed-card__emblem">⛰️</div>
+                  <span class="fed-card__type is-otonom">DAERAH OTONOM</span>
+                </div>
+                <div class="fed-card__content">
+                  <h4 class="fed-card__name">Daerah Bangka</h4>
+                  <span class="fed-card__capital">Pusat: Pangkalpinang</span>
+                </div>
+                <div class="fed-card__notch-meta">
+                  <span class="fed-card__code">PANGKALPINANG</span>
+                  <span class="fed-card__year">1949</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 14: Belitung -->
+          <div class="fed-card" data-category="otonom">
+            <div class="fed-card__frame-wrap">
+              <svg class="fed-card__svg-frame" viewBox="0 0 407 411" fill="none" preserveAspectRatio="none">
+                <path d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 0-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" stroke="#D4AF37" stroke-width="1.8" vector-effect="non-scaling-stroke"></path>
+              </svg>
+              <div class="fed-card__inner">
+                <div class="fed-card__visual">
+                  <div class="fed-card__emblem">🏝️</div>
+                  <span class="fed-card__type is-otonom">DAERAH OTONOM</span>
+                </div>
+                <div class="fed-card__content">
+                  <h4 class="fed-card__name">Daerah Belitung</h4>
+                  <span class="fed-card__capital">Pusat: Tanjung Pandan</span>
+                </div>
+                <div class="fed-card__notch-meta">
+                  <span class="fed-card__code">TG. PANDAN</span>
+                  <span class="fed-card__year">1949</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 15: Riau -->
+          <div class="fed-card" data-category="otonom">
+            <div class="fed-card__frame-wrap">
+              <svg class="fed-card__svg-frame" viewBox="0 0 407 411" fill="none" preserveAspectRatio="none">
+                <path d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 0-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" stroke="#D4AF37" stroke-width="1.8" vector-effect="non-scaling-stroke"></path>
+              </svg>
+              <div class="fed-card__inner">
+                <div class="fed-card__visual">
+                  <div class="fed-card__emblem">👑</div>
+                  <span class="fed-card__type is-otonom">DAERAH OTONOM</span>
+                </div>
+                <div class="fed-card__content">
+                  <h4 class="fed-card__name">Daerah Riau</h4>
+                  <span class="fed-card__capital">Pusat: Tanjung Pinang</span>
+                </div>
+                <div class="fed-card__notch-meta">
+                  <span class="fed-card__code">TG. PINANG</span>
+                  <span class="fed-card__year">1949</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 16: Jawa Tengah -->
+          <div class="fed-card" data-category="otonom">
+            <div class="fed-card__frame-wrap">
+              <svg class="fed-card__svg-frame" viewBox="0 0 407 411" fill="none" preserveAspectRatio="none">
+                <path d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 0-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" stroke="#D4AF37" stroke-width="1.8" vector-effect="non-scaling-stroke"></path>
+              </svg>
+              <div class="fed-card__inner">
+                <div class="fed-card__visual">
+                  <div class="fed-card__emblem">🏯</div>
+                  <span class="fed-card__type is-otonom">DAERAH ISTIMEWA</span>
+                </div>
+                <div class="fed-card__content">
+                  <h4 class="fed-card__name">Jawa Tengah</h4>
+                  <span class="fed-card__capital">Pusat: Surakarta &amp; Semarang</span>
+                </div>
+                <div class="fed-card__notch-meta">
+                  <span class="fed-card__code">SURAKARTA</span>
+                  <span class="fed-card__year">1949</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.federation-grid -->
+
+      </div><!-- /.federation-container -->
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 7: CINEMATIC NOTCHED FOOTER
+         (With Neon Gold Gradient Halo & Curved Arch Notch)
+         Inspired by scroll-100.png
+    ════════════════════════════════════════════ -->
+    <footer class="cinematic-footer" id="cinematicFooter">
+      
+      <!-- Ambient Golden Halo Gradient Glow from Below -->
+      <div class="footer-halo-glow" aria-hidden="true"></div>
+
+      <!-- Notched Dark Outer Card Container -->
+      <div class="footer-card">
+        
+        <!-- Central Notch Bump SVG on top edge -->
+        <div class="footer-notch-bump" aria-hidden="true">
+          <svg viewBox="0 0 280 32" fill="none" preserveAspectRatio="none">
+            <path d="M0 32 C40 32 60 4 100 4 L180 4 C220 4 240 32 280 32 Z" fill="#131210"/>
+          </svg>
+        </div>
+
+        <div class="footer-card__inner">
+
+          <!-- Center Signature & Top Branding -->
+          <div class="footer-top-brand">
+            <div class="footer-signature-wrap">
+              <img src="assets/img/UUDRIS_gold.png" alt="UUDRIS Gold Signature" class="footer-signature-img" />
+            </div>
+            <h2 class="footer-headline">
+              <span class="footer-hl-sans font-display">SELALU MENEGAKKAN</span>
+              <br>
+              <span class="footer-hl-serif font-serifItalic italic">PERSATUAN &amp; DEMOKRASI.</span>
+            </h2>
+            <p class="footer-subtext">
+              Menelusuri sejarah konstitusi bukan sekadar mengenang dokumen masa silam, melainkan menjaga api kemerdekaan, supremasi hak asasi, dan kedaulatan rakyat Indonesia.
+            </p>
+            <div class="footer-cta-wrap">
+              <button onclick="openCompareModal()" class="footer-btn-cta">
+                <span>BUKA MATRIKS 5 INDIKATOR LENGKAP</span>
+                <span class="footer-btn-cta__arrow">⟶</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Dual Column Navigation (Pages & Digital Archives) -->
+          <div class="footer-nav-grid">
+            
+            <div class="footer-nav-col">
+              <span class="footer-nav-title font-mono">NAVIGASI HALAMAN</span>
+              <ul class="footer-nav-links">
+                <li><a href="#" class="footer-link">BERANDA // ARSIP AWAL</a></li>
+                <li><a href="#indikator-section" class="footer-link">5 INDIKATOR DEMOKRASI</a></li>
+                <li><a href="#horizontalScrollSection" class="footer-link">KRONIK 1949–1950</a></li>
+                <li><a href="#splitDualSection" class="footer-link">ON TRACK VS OFF TRACK</a></li>
+                <li><a href="#federationSection" class="footer-link is-accent">16 NEGARA BAGIAN RIS</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-nav-col">
+              <span class="footer-nav-title font-mono">DOKUMEN &amp; REFERENSI</span>
+              <ul class="footer-nav-links">
+                <li><a href="#" class="footer-link">PIAGAM KMB RIDDERZAAL 1949</a></li>
+                <li><a href="#" class="footer-link">DEKLARASI UNIVERSAL HAM 1948</a></li>
+                <li><a href="#" class="footer-link">LEMBARAN NEGARA NO. 533/1949</a></li>
+                <li><a href="#" class="footer-link">TRANSKRIP DEBAT PARLEMEN PEJAMBON</a></li>
+                <li><a href="#" class="footer-link">MOSI INTEGRAL MOHAMMAD NATSIR</a></li>
+              </ul>
+            </div>
+
+          </div><!-- /.footer-nav-grid -->
+
+          <!-- Partner & Institution Ticker Strip -->
+          <div class="footer-institutions-strip">
+            <span class="footer-inst-label font-mono">JARINGAN DOKUMENTASI &amp; ARSIP SEJARAH :</span>
+            <div class="footer-inst-logos">
+              <span class="inst-tag">✦ ARSIP NASIONAL REPUBLIK INDONESIA</span>
+              <span class="inst-tag">✦ MAHKAMAH KONSTITUSI RI</span>
+              <span class="inst-tag">✦ PERPUSTAKAAN NASIONAL</span>
+              <span class="inst-tag">✦ KEMENDIKBUDRISTEK</span>
+              <span class="inst-tag">✦ PUSAT KAJIAN KONSTITUSI</span>
+            </div>
+          </div>
+
+          <!-- Bottom Bar: Copyright & Legal -->
+          <div class="footer-bottom-bar">
+            <span class="footer-copy font-mono">
+              &copy; 1949–2026 E-Arsip Konstitusi Demokrasi Indonesia. Didedikasikan untuk Pendidikan Sejarah Bangsa.
+            </span>
+            <div class="footer-legal-links font-mono">
+              <a href="#" class="footer-legal-link">PEDOMAN ARSIP</a>
+              <span class="footer-legal-sep">▪</span>
+              <a href="#" class="footer-legal-link">AKSES PUBLIK</a>
+              <span class="footer-legal-sep">▪</span>
+              <a href="#" class="footer-legal-link">SITEMAP</a>
+            </div>
+          </div>
+
+        </div><!-- /.footer-card__inner -->
+      </div><!-- /.footer-card -->
+
+    </footer>
+
+    <!-- ==========================================
+         MODAL: MATRIKS 5 INDIKATOR DEMOKRASI
+         ========================================== -->
+    <div id="compare-modal" data-lenis-prevent class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+        <div class="bg-obsidianCard border border-goldPrimary/50 rounded-3xl max-w-4xl w-full p-6 sm:p-8 text-ivoryWhite shadow-2xl max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between pb-4 border-b border-white/15">
+                <div>
+                    <span class="font-mono text-xs text-goldPrimary font-bold">TABEL RINGKASAN PRESENTASI</span>
+                    <h3 class="font-display font-bold text-2xl text-white">Matriks 5 Indikator Demokrasi: Era UUD RIS (1949–1950)</h3>
+                </div>
+                <button onclick="closeCompareModal()" class="w-9 h-9 rounded-full bg-white/10 hover:bg-goldPrimary hover:text-obsidian flex items-center justify-center font-mono font-bold transition">✕</button>
+            </div>
+
+            <div class="overflow-x-auto mt-6">
+                <table class="w-full text-left border-collapse text-xs sm:text-sm">
+                    <thead>
+                        <tr class="border-b border-white/20 font-mono text-goldPrimary">
+                            <th class="py-3 px-3">Indikator Demokrasi</th>
+                            <th class="py-3 px-3">Pelaksanaan pada UUD RIS (1949–1950)</th>
+                            <th class="py-3 px-3">Bukti / Pasal Kunci</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/10">
+                        <tr>
+                            <td class="py-3.5 px-3 font-bold text-white">1. Akuntabilitas</td>
+                            <td class="py-3.5 px-3 text-silverMetal">Tinggi & transparan lewat parlemen dua kamar (Senat & DPR RIS), namun menggunakan sistem <em>Quasi-Parlementer</em> di mana parlemen tidak bisa menjatuhkan kabinet.</td>
+                            <td class="py-3.5 px-3 font-mono text-goldChampagne font-semibold">Pasal 118 UUD RIS</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3.5 px-3 font-bold text-white">2. Rotasi Kekuasaan</td>
+                            <td class="py-3.5 px-3 text-silverMetal">Di tingkat pusat statis (hanya 1 kabinet: Kabinet RIS Hatta karena umur 8 bulan). Di daerah sangat dinamis karena wali negara bagian membubarkan diri kembali ke NKRI.</td>
+                            <td class="py-3.5 px-3 font-mono text-goldChampagne font-semibold">UU Darurat No. 11/1950</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3.5 px-3 font-bold text-white">3. Rekruitmen Politik</td>
+                            <td class="py-3.5 px-3 text-silverMetal">Terbuka melalui kompromi delegasi 16 daerah bagian (Republik & BFO) serta pembentukan <em>Zaken Kabinet</em> berbasis keahlian oleh 4 formatur.</td>
+                            <td class="py-3.5 px-3 font-mono text-goldChampagne font-semibold">Pasal 74 & 80 UUD RIS</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3.5 px-3 font-bold text-white">4. Pemilu</td>
+                            <td class="py-3.5 px-3 text-silverMetal">Direncanakan dalam waktu 1 tahun untuk memilih DPR RIS definitif, tetapi 0 kali terlaksana karena RIS keburu dibubarkan pada 17 Agustus 1950.</td>
+                            <td class="py-3.5 px-3 font-mono text-goldChampagne font-semibold">Pasal 111 UUD RIS</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3.5 px-3 font-bold text-white">5. Hak-Hak Dasar (HAM)</td>
+                            <td class="py-3.5 px-3 text-silverMetal">Sangat tinggi & paling lengkap; mengadopsi langsung DUHAM PBB 1948 ke dalam 27 pasal khusus HAM. Pers dan berserikat sangat bebas.</td>
+                            <td class="py-3.5 px-3 font-mono text-goldChampagne font-semibold">Pasal 7 – 33 UUD RIS</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+  </div><!-- /.scroll-wrapper -->
+
+  <!-- Scripts: Lenis Smooth Scroll + GSAP 3 + ScrollTrigger -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
